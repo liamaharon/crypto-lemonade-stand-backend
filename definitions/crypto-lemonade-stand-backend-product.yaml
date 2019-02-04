@@ -1,0 +1,25 @@
+product: '1.0.0'
+
+info:
+  name: crypto-lemonade-stand-backend
+  title: crypto-lemonade-stand-backend
+  version: "1.0.0"
+
+apis:
+  'crypto-lemonade-stand-backend':
+    $ref: crypto-lemonade-stand-backend.yaml
+
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

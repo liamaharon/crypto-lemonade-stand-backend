@@ -1,0 +1,30 @@
+{
+  "name": "Account",
+  "plural": "Accounts",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "verificationLevel": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

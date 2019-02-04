@@ -1,0 +1,36 @@
+{
+  "name": "crypto-lemonade-stand-backend",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "test": "jest"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "helmet": "^3.11.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^2.0.0",
+    "superagent": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "eslint-plugin-jest": "^22.2.2",
+    "jest": "^24.0.0",
+    "sinon": "^7.2.3"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "crypto-lemonade-stand-backend"
+}
