@@ -16,37 +16,37 @@ describe('Account model', () => {
   });
 
   describe('POST Accounts', () => {
+    const validPayload = {
+      email: 'INTERNALTEST@INTERNALTEST.COM',
+      password: 'pass',
+      phoneNumber: '04000',
+    };
+
     it('should fail if phoneNumber is blank', async () => {
       const req = request
         .post(`${endpoint}/accounts`)
         .set('Accept', 'application/json')
         .set('Content-Type', 'application/json')
-        .send({
-          email: 'acc@email.com',
-          password: 'pass',
-        });
+        .send({...validPayload, phoneNumber: undefined});
 
       expect(() => req()).toThrowError();
     });
 
-    it('should sucessfully create new accounts', async () => {
+    it('should create new accounts with expected properties', async () => {
       const expected = {
-        email: 'INTERNALTEST@INTERNALTEST.COM',
-        phoneNumber: '04000',
+        ...validPayload,
         verificationLevel: 0,
         id: 1,
       };
+      delete expected.password;
+
       const res = await request
         .post(`${endpoint}/accounts`)
         .set('Accept', 'application/json')
         .set('Content-Type', 'application/json')
-        .send({
-          email: 'INTERNALTEST@INTERNALTEST.COM',
-          password: 'pass',
-          phoneNumber: '04000',
-        });
-      expect(res.status).toEqual(200);
+        .send(validPayload);
 
+      expect(res.status).toEqual(200);
       expect(JSON.parse(res.text)).toEqual(expected);
     });
   });
