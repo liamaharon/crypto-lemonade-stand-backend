@@ -1,7 +1,7 @@
 {
   "extends": "loopback",
   "plugins": ["jest"],
-  "parserOptions": { "ecmaVersion": 8 },
+  "parserOptions": { "ecmaVersion": 9 },
   "env": {
     "jest": true
   }
