@@ -8,10 +8,11 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "test": "jest"
+    "test": "concurrently \"NODE_ENV=test npm run start\" \"jest\" -k --success first"
   },
   "dependencies": {
     "compression": "^1.0.3",
+    "concurrently": "^4.1.0",
     "cors": "^2.5.2",
     "helmet": "^3.11.0",
     "loopback": "^3.22.0",
