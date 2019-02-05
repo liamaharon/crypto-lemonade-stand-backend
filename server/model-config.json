@@ -16,5 +16,13 @@
   "Account": {
     "dataSource": "mem-db",
     "public": true
+  },
+  "Product": {
+    "dataSource": "mem-db",
+    "public": true
+  },
+  "Order": {
+    "dataSource": "mem-db",
+    "public": true
   }
 }
