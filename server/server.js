@@ -2,9 +2,11 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var explorer = require('loopback-component-explorer');
 
 var app = module.exports = loopback();
 
+explorer(app, {basePath: '/api', mountPath: '/explorer'});
 app.start = function() {
   // start the web server
   return app.listen(function() {
