@@ -45,7 +45,7 @@ describe('Product model', () => {
     it('should create new products with expected properties', async () => {
       const expected = {
         ...validPayload,
-        id: 1,
+        id: 3,
       };
       const res = await request
         .post(`${endpoint}/products`)

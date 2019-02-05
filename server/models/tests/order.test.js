@@ -20,6 +20,7 @@ describe('Order model', () => {
       qty: 5,
       address: '1BTC2',
       status: 'PENDING_PAYMENT',
+      productId: 1,
     };
     it('should fail if qty is blank', async () => {
       const req = request
@@ -41,6 +42,16 @@ describe('Order model', () => {
       expect(() => req()).toThrowError();
     });
 
+    it('should fail if productId is blank', async () => {
+      const req = request
+        .post(`${endpoint}/orders`)
+        .set('Accept', 'application/json')
+        .set('Content-Type', 'application/json')
+        .send({...validPayload, productId: undefined});
+
+      expect(() => req()).toThrowError();
+    });
+
     it('should fail if status is blank', async () => {
       const req = request
         .post(`${endpoint}/orders`)
@@ -54,7 +65,7 @@ describe('Order model', () => {
     it('should create new orders with expected properties', async () => {
       const expected = {
         ...validPayload,
-        id: 1,
+        id: 2,
       };
       const res = await request
         .post(`${endpoint}/orders`)
@@ -62,7 +73,6 @@ describe('Order model', () => {
         .set('Content-Type', 'application/json')
         .send(validPayload);
       expect(res.status).toEqual(200);
-
       expect(JSON.parse(res.text)).toEqual(expected);
     });
   });
