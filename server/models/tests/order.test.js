@@ -7,15 +7,7 @@ const request = require('superagent');
 const {endpoint} = require('../../utils');
 
 describe('Order model', () => {
-  describe('GET Orders', () => {
-    it('returns status OK', async () => {
-      const res = await request.get(`${endpoint}/orders`);
-
-      expect(res.status).toEqual(200);
-    });
-  });
-
-  describe('POST Orders', () => {
+  describe('Creating new Orders', () => {
     const validPayload = {
       qty: 5,
       address: '1BTC2',

@@ -7,15 +7,7 @@ const request = require('superagent');
 const {endpoint} = require('../../utils');
 
 describe('Product model', () => {
-  describe('GET Products', () => {
-    it('returns status OK', async () => {
-      const res = await request.get(`${endpoint}/products`);
-
-      expect(res.status).toEqual(200);
-    });
-  });
-
-  describe('POST Products', () => {
+  describe('Creating new Products', () => {
     const validPayload = {
       name: 'Bitcoin',
       ticker: 'BTC',
