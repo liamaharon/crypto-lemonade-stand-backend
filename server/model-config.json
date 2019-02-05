@@ -24,5 +24,31 @@
   "Order": {
     "dataSource": "mem-db",
     "public": true
+  },
+  "AccessToken": {
+    "dataSource": "mem-db",
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "Account",
+        "foreignKey": "accountId"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "mem-db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mem-db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "mem-db",
+    "public": false
   }
 }
