@@ -36,7 +36,7 @@ describe('Account model', () => {
       const expected = {
         ...validPayload,
         verificationLevel: 0,
-        id: 1,
+        id: 3,
       };
       delete expected.password;
 

@@ -21,6 +21,7 @@ describe('Order model', () => {
       address: '1BTC2',
       status: 'PENDING_PAYMENT',
       productId: 1,
+      accountId: 1,
     };
     it('should fail if qty is blank', async () => {
       const req = request
@@ -38,6 +39,16 @@ describe('Order model', () => {
         .set('Accept', 'application/json')
         .set('Content-Type', 'application/json')
         .send({...validPayload, ticker: undefined});
+
+      expect(() => req()).toThrowError();
+    });
+
+    it('should fail if accountId is blank', async () => {
+      const req = request
+        .post(`${endpoint}/orders`)
+        .set('Accept', 'application/json')
+        .set('Content-Type', 'application/json')
+        .send({...validPayload, accountId: undefined});
 
       expect(() => req()).toThrowError();
     });
@@ -65,7 +76,7 @@ describe('Order model', () => {
     it('should create new orders with expected properties', async () => {
       const expected = {
         ...validPayload,
-        id: 2,
+        id: 3,
       };
       const res = await request
         .post(`${endpoint}/orders`)

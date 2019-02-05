@@ -20,7 +20,11 @@
       "required": true
     },
     "productId": {
-      "type": "string",
+      "type": "number",
+      "required": true
+    },
+    "accountId": {
+      "type": "number",
       "required": true
     }
   },
