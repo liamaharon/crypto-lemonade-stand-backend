@@ -6,7 +6,7 @@
 const request = require('superagent');
 const {endpoint} = require('../../utils');
 
-describe('Product model', () => {
+xdescribe('Product model', () => {
   describe('Creating new Products', () => {
     const validPayload = {
       name: 'Bitcoin',

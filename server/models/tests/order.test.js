@@ -6,7 +6,7 @@
 const request = require('superagent');
 const {endpoint} = require('../../utils');
 
-describe('Order model', () => {
+xdescribe('Order model', () => {
   describe('Creating new Orders', () => {
     const validPayload = {
       qty: 5,

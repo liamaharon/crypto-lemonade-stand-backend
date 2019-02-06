@@ -6,10 +6,37 @@
 const request = require('superagent');
 const {endpoint} = require('../../utils');
 
-describe('Account model', () => {
+xdescribe('Account model', () => {
+  describe('an authenticated user', async () => {
+    let authToken;
+    const email = 'test@testing.com';
+    const password = 'pass';
+
+    // create an account
+    await request
+      .post(`${endpoint}/accounts`)
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
+      .send({email, password, phoneNumber: '0400'});
+
+    // login
+    const res = await request
+      .post(`${endpoint}/accounts/login`)
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
+      .send({email, password});
+    console.log(res);
+
+    it('should can lookup own orders', async () => {
+      const res = await request
+        .get(`${endpoint}/accounts/1/orders`);
+      expect(res.status).toEqual(200);
+    });
+  });
+
   describe('creating new Accounts', () => {
     const validPayload = {
-      email: 'INTERNALTEST@INTERNALTEST.COM',
+      email: 'test2@testing.com',
       password: 'pass',
       phoneNumber: '04000',
     };
@@ -28,7 +55,6 @@ describe('Account model', () => {
       const expected = {
         ...validPayload,
         verificationLevel: 0,
-        id: 3,
       };
       delete expected.password;
 
@@ -38,8 +64,11 @@ describe('Account model', () => {
         .set('Content-Type', 'application/json')
         .send(validPayload);
 
+      const createdAccount = JSON.parse(res.text);
+      delete createdAccount.id;
+
       expect(res.status).toEqual(200);
-      expect(JSON.parse(res.text)).toEqual(expected);
+      expect(createdAccount).toEqual(expected);
     });
   });
 });

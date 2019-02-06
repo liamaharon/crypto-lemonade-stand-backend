@@ -33,14 +33,36 @@ module.exports = function(server) {
 
   server.models.Account.create([
     {
+      email: 'admin@email.com',
+      password: 'admin',
+      phoneNumber: '0400000000',
+    },
+    {
       email: 'acc1@email.com',
       password: 'pass',
-      phoneNumber: '0400000000',
+      phoneNumber: '0400000001',
     },
     {
       email: 'acc2@email.com',
       password: 'pass',
-      phoneNumber: '0400000001',
+      phoneNumber: '0400000002',
     },
-  ]);
+  ], function(err, users) {
+    if (err) throw err;
+
+    // create the admin role
+    server.models.Role.create({
+      name: 'admin',
+    }, function(err, role) {
+      if (err) throw err;
+
+      // assign admin role
+      role.principals.create({
+        principalType: server.models.RoleMapping.USER,
+        principalId: users[0].id,
+      }, function(err) {
+        if (err) throw err;
+      });
+    });
+  });
 };
