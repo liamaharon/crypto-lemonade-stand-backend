@@ -20,14 +20,14 @@ module.exports = function(server) {
       address: '0x00000000',
       status: 'PENDING_PAYMENT',
       productId: 2,
-      accountId: 1,
+      accountId: 2,
     },
     {
       qty: 1.2,
       address: '1BTC2',
       status: 'PENDING_PAYMENT',
       productId: 1,
-      accountId: 1,
+      accountId: 2,
     },
   ]);
 
