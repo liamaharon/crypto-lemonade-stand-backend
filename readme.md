@@ -16,7 +16,7 @@ npm start
 
 ## Introduction
 
-This repo contains the backend for the Crypto Lemonade Stand project. The accociated front-end for the project can be found [here](https://github.com/liamaharon/crypto-lemonade-stand-frontend).
+This repo contains the backend for the Crypto Lemonade Stand project. The associated front-end for the project can be found [here](https://github.com/liamaharon/crypto-lemonade-stand-frontend).
 
 ## Initial data
 
