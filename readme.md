@@ -20,7 +20,9 @@ This repo contains the backend for the Crypto Lemonade Stand project. The associ
 
 ## Initial data
 
-On server startup some data is created, including two accounts
+On server startup some data is created. 
+
+### Accounts
 
 - Admin
   - email: admin@email.com
@@ -30,6 +32,14 @@ On server startup some data is created, including two accounts
   - email: user@email.com
   - password: pass
   - role: $authenticated
+
+### Products
+- Ethereum product
+- Bitcoin product
+
+### Orders
+- Ethereum order for User1
+- Bitcoin order for User1
 
 ## Features
 
