@@ -17,14 +17,14 @@ module.exports = function(server) {
   server.models.Order.create([
     {
       qty: 5,
-      address: '0x00000000',
+      address: '0x650dd185744ac96c1200438c1a2b06c1eb5a0e6b',
       status: 'PENDING_PAYMENT',
       productId: 2,
       accountId: 2,
     },
     {
       qty: 1.2,
-      address: '1BTC2',
+      address: '3B3qq3EAPtpkSoGHSDfY6rxpK5Bqh7zmij',
       status: 'PENDING_PAYMENT',
       productId: 1,
       accountId: 2,
