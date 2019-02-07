@@ -34,18 +34,13 @@ module.exports = function(server) {
   server.models.Account.create([
     {
       email: 'admin@email.com',
-      password: 'admin',
+      password: 'pass',
       phoneNumber: '0400000000',
     },
     {
       email: 'user@email.com',
       password: 'pass',
       phoneNumber: '0400000001',
-    },
-    {
-      email: 'acc2@email.com',
-      password: 'pass',
-      phoneNumber: '0400000002',
     },
   ], function(err, users) {
     if (err) throw err;
