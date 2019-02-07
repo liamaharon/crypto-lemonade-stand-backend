@@ -1,4 +1,4 @@
-# Crypto Lemondade Stand Backend
+# Crypto Lemonade Stand Backend
 
 ## Setup
 
@@ -33,10 +33,14 @@ On server startup some data is created, including two accounts
 
 ## Features
 
+- [x] Account model that inherits User
+- [x] Product model that inherits PersistedModel. Contains information about a crypto asset/product.
+- [x] Order model that inherits PersistedModel. Contains information about an order, links to an Account and Product.
+- [x] Status attribute is validated for all orders
+- [x] Addresses attribute is validated for Bitcoin and Ethereum orders
+- [x] Custom admin role
 - [x] The admin user has unrestricted access to all models
 - [x] Unauthenticated users can create new accounts
 - [x] Authenticated users can view products
 - [x] Authenticated users can view only their own orders
 - [x] Authenticated users can create new orders for themselves
-- [x] Status attribute is validated for all orders
-- [x] Addresses attribute is validated for Bitcoin and Ethereum orders
