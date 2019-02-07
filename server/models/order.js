@@ -9,7 +9,7 @@ module.exports = function(Order) {
     if
     (
       this.status !== 'PENDING_PAYMENT' &&
-      this.status !== 'PENDING_FUFILMENT' &&
+      this.status !== 'PENDING_FULFILMENT' &&
       this.status !== 'COMPLETED'
     ) err();
   };
