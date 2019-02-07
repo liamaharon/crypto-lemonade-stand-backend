@@ -4,7 +4,7 @@
 
 ```bash
 git clone https://github.com/liamaharon/crypto-lemonade-stand-backend.git
-cd crypto-lemondade-backend
+cd crypto-lemondade-stand-backend
 npm i
 ```
 
