@@ -38,7 +38,7 @@ module.exports = function(server) {
       phoneNumber: '0400000000',
     },
     {
-      email: 'acc1@email.com',
+      email: 'user@email.com',
       password: 'pass',
       phoneNumber: '0400000001',
     },
